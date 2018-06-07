@@ -1,0 +1,373 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13366,        363]
+NotebookOptionsPosition[      9243,        273]
+NotebookOutlinePosition[     12036,        337]
+CellTagsIndexPosition[     11993,        334]
+WindowTitle->Curvature tensors and Einstein's equations
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["N P TUTORIAL", "PacletNameCell",ExpressionUUID->
+     "6032ba8f-05c6-4656-9beb-94dbc5ade256"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }],ExpressionUUID->"83312897-f86d-47c7-a513-3ccf7fc5e1ab"],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->
+        False], {"\<\"NP/tutorial/Curvature tensors and Einstein's \
+equations\"\>":>None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["NP/tutorial/Curvature tensors and Einstein's equations"]}, 
+           Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/NP/tutorial/Curvature \
+tensors and Einstein's equations.html"], StandardForm]], "Input", 
+             TextClipboardType -> "PlainText"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$10841], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "NP/tutorial/Curvature tensors and Einstein's equations", 
+            ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0},ExpressionUUID->
+     "bbd74602-45a9-431b-ad3d-eaf0612c356d"]], "AnchorBar",ExpressionUUID->
+     "1a9c8838-b0d9-45de-b4b5-a4a41a3ff35a"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1,ExpressionUUID->"444a9eb2-3b65-4c94-adc9-59020b6f7cd2"],
+
+Cell[CellGroupData[{
+
+Cell["Curvature tensors and Einstein's equations", "Title",
+ CellID->509267359,ExpressionUUID->"8e24c8bb-10bc-4a3c-97b3-b8d7090ed1cf"],
+
+Cell[TextData[{
+ "This part of the ",
+ StyleBox["NP",
+  FontWeight->"Bold"],
+ " package deals with manipulations with tensors in coordinates, so that \
+vectors/covectors are represented by lists and tensors by matrices."
+}], "Text",
+ CellID->1534169418,ExpressionUUID->"79e82b4a-88cc-4af2-aee2-e61b58890ce4"],
+
+Cell[BoxData[GridBox[{
+   {
+    RowBox[{"NPExtractMetric", "[", 
+     RowBox[{"ds", ",", " ", "xs"}], "]"}], Cell[TextData[{
+     "Converts the line element ",
+     StyleBox["ds",
+      FontSlant->"Italic"],
+     " into a symmetric matrix representing the covariant metric tensor. List \
+of coordinates is provided in ",
+     StyleBox["xs",
+      FontSlant->"Italic"],
+     ". "
+    }], "TableText",ExpressionUUID->"20d813bf-8462-4938-890e-8644af8e6179"]}
+  }]], "DefinitionBox",
+ CellID->2096742444,ExpressionUUID->"bd49f172-d1e5-4de5-a945-2fe794c44c38"],
+
+Cell["XXXX.", "Caption",
+ CellID->1891092685,ExpressionUUID->"f7cb7154-c19a-4648-b9c8-3efbc2633439"],
+
+Cell[TextData[{
+ StyleBox["NPExtractMetric[ds, xs] ", "Input"],
+ "allows to extract the matrix of a metric tensor conveniently from the line \
+element. Suppose we want to define covariant metric tensor representing the \
+Schwarzschild solution in Schwarzschild coordinates. The ",
+ StyleBox["line element",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["ds", "Input"],
+ " is written as a quadratic form of differentials of coordinates. The ",
+ StyleBox["list of coordinates",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["xs", "Input"],
+ " tells Mathematica what differentials it should look for in the line \
+element."
+}], "MathCaption",
+ TextJustification->1.,
+ CellID->836781195,ExpressionUUID->"b3ef26cf-4c3b-4f5c-868a-070cf694861c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ds", " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        FractionBox[
+         RowBox[{"2", "M"}], "r"]}], ")"}], 
+      SuperscriptBox[
+       RowBox[{"Dt", "[", "t", "]"}], "2"]}], "-", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"1", "-", 
+        FractionBox[
+         RowBox[{"2", "M"}], "r"]}]], 
+      SuperscriptBox[
+       RowBox[{"Dt", "[", "r", "]"}], "2"]}], "-", 
+     RowBox[{
+      SuperscriptBox["r", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"Dt", "[", "\[Theta]", "]"}], "2"], "+", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"], 
+         SuperscriptBox[
+          RowBox[{"Dt", "[", "\[Phi]", "]"}], "2"]}]}], ")"}]}]}]}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xs", "  ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "r", ",", " ", "\[Theta]", ",", " ", "\[Phi]"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"gd", " ", "=", " ", 
+  RowBox[{"NPExtractMetric", "[", 
+   RowBox[{"ds", ",", "xs"}], "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->2058623809,ExpressionUUID->"c7e90f90-aeff-40dc-a573-2bab8646152c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "-", 
+      FractionBox[
+       RowBox[{"2", " ", "M"}], "r"]}], ",", "0", ",", "0", ",", "0"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{"1", "-", 
+        FractionBox[
+         RowBox[{"2", " ", "M"}], "r"]}]]}], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"-", 
+      SuperscriptBox["r", "2"]}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", 
+     RowBox[{
+      RowBox[{"-", 
+       SuperscriptBox["r", "2"]}], " ", 
+      SuperscriptBox[
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}]}], "}"}]}], 
+  "}"}]], "Output",
+ ImageSize->{297, 71},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->1770546904,ExpressionUUID->"5c55ec57-df51-4dbc-a267-d07fcfad1324"]
+}, Open  ]],
+
+Cell[TextData[{
+ "We follow the convention that the names of covariant tensors carry the \
+postfix ",
+ StyleBox["d",
+  FontWeight->"Bold"],
+ " (down) and covariant tensors carry the postfix ",
+ StyleBox["u",
+  FontWeight->"Bold"],
+ "(up). In this convention, the contravariant metric is simply"
+}], "Text",
+ CellID->1886068239,ExpressionUUID->"e86c2520-ab46-4555-9247-3d6774ba53cc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gu", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Inverse", "[", "gd", "]"}], "//", "Simplify"}]}]], "Input",
+ CellLabel->"In[20]:=",
+ CellID->1205057723,ExpressionUUID->"dddc6f0a-3e98-41af-924e-9452dbf4bad7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"1", "-", 
+       FractionBox[
+        RowBox[{"2", " ", "M"}], "r"]}]], ",", "0", ",", "0", ",", "0"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      FractionBox[
+       RowBox[{"2", " ", "M"}], "r"]}], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"-", 
+      FractionBox["1", 
+       SuperscriptBox["r", "2"]]}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", 
+     RowBox[{"-", 
+      FractionBox[
+       SuperscriptBox[
+        RowBox[{"Csc", "[", "\[Theta]", "]"}], "2"], 
+       SuperscriptBox["r", "2"]]}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{573, 49},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[20]=",
+ CellID->1281719846,ExpressionUUID->"5132cbc9-6e29-4e3f-9a63-27464302669b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell",ExpressionUUID->"1df41d90-a4a9-40c6-85ed-a30e750aeecd"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Curvature tensors and Einstein's equations",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:NP/guide/NP", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2018, 6, 7, 11, 3, 17.910259}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "NP`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "N P Tutorial", "language" -> "en", "paclet" -> "NP", 
+    "status" -> "None", "summary" -> 
+    "This part of the NP package deals with manipulations with tensors in \
+coordinates, so that vectors/covectors are represented by lists and tensors \
+by matrices. XXXX. NPExtractMetric[ds, xs] allows to extract the matrix of a \
+metric tensor conveniently from the line element. Suppose we want to define \
+covariant metric tensor representing the Schwarzschild solution in \
+Schwarzschild coordinates. The line element ds is written as a quadratic form \
+of differentials of coordinates. The list of coordinates xs tells Mathematica \
+what differentials it should look for in the line element.", "synonyms" -> {},
+     "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$10792, 
+    "title" -> "Curvature tensors and Einstein's equations", "titlemodifier" -> 
+    "", "windowtitle" -> "Curvature tensors and Einstein's equations", "type" -> 
+    "Tutorial", "uri" -> 
+    "NP/tutorial/Curvature tensors and Einstein's equations"}, 
+  "SearchTextTranslated" -> ""},
+FrontEndVersion->"11.2 for Linux x86 (64-bit) (September 10, 2017)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> "11.2 for Linux x86 (64-bit) (September 10, 2017)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[614, 21, 2723, 59, 55, "AnchorBarGrid",ExpressionUUID->"444a9eb2-3b65-4c94-adc9-59020b6f7cd2",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3362, 84, 134, 1, 112, "Title",ExpressionUUID->"8e24c8bb-10bc-4a3c-97b3-b8d7090ed1cf",
+ CellID->509267359],
+Cell[3499, 87, 308, 7, 62, "Text",ExpressionUUID->"79e82b4a-88cc-4af2-aee2-e61b58890ce4",
+ CellID->1534169418],
+Cell[3810, 96, 555, 14, 108, "DefinitionBox",ExpressionUUID->"bd49f172-d1e5-4de5-a945-2fe794c44c38",
+ CellID->2096742444],
+Cell[4368, 112, 100, 1, 38, "Caption",ExpressionUUID->"f7cb7154-c19a-4648-b9c8-3efbc2633439",
+ CellID->1891092685],
+Cell[4471, 115, 726, 18, 122, "MathCaption",ExpressionUUID->"b3ef26cf-4c3b-4f5c-868a-070cf694861c",
+ CellID->836781195],
+Cell[CellGroupData[{
+Cell[5222, 137, 1297, 40, 115, "Input",ExpressionUUID->"c7e90f90-aeff-40dc-a573-2bab8646152c",
+ CellID->2058623809],
+Cell[6522, 179, 969, 32, 92, "Output",ExpressionUUID->"5c55ec57-df51-4dbc-a267-d07fcfad1324",
+ CellID->1770546904]
+}, Open  ]],
+Cell[7506, 214, 382, 10, 70, "Text",ExpressionUUID->"e86c2520-ab46-4555-9247-3d6774ba53cc",
+ CellID->1886068239],
+Cell[CellGroupData[{
+Cell[7913, 228, 227, 5, 70, "Input",ExpressionUUID->"dddc6f0a-3e98-41af-924e-9452dbf4bad7",
+ CellID->1205057723],
+Cell[8143, 235, 991, 32, 70, "Output",ExpressionUUID->"5132cbc9-6e29-4e3f-9a63-27464302669b",
+ CellID->1281719846]
+}, Open  ]]
+}, Open  ]],
+Cell[9161, 271, 78, 0, 70, "FooterCell",ExpressionUUID->"1df41d90-a4a9-40c6-85ed-a30e750aeecd"]
+}
+]
+*)
+
+(* End of internal cache information *)
+

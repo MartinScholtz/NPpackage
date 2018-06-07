@@ -1,0 +1,454 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15564,        446]
+NotebookOptionsPosition[     10828,        342]
+NotebookOutlinePosition[     11301,        360]
+CellTagsIndexPosition[     11258,        357]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.0", "HistoryData",
+  CellTags->"New",ExpressionUUID->"113df3c9-0339-488b-863a-a6074f326161"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"3d09ef23-652e-4972-8f09-47903e32087c"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->"dffe3601-6e76-4ca7-9fb2-00b51952a884"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised",ExpressionUUID->"664d13c0-12ae-4415-99f0-9701890ac61f"]
+}], "History",
+ CellID->1247902091,ExpressionUUID->"570dc24c-8bee-44d0-a19e-eff0871dfc80"],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449,ExpressionUUID->"1fcb5b4c-ba4c-4ca2-acb0-8824ba7a54eb"],
+
+Cell["Tutorial", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507,ExpressionUUID->"ee37fcf1-3ac2-40a7-8f5a-49dadee02402"],
+
+Cell["NP", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465,ExpressionUUID->"d28df8e3-c407-48cc-b077-d15cfdf3ba2d"],
+
+Cell["NP`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828,ExpressionUUID->"c4095a62-eb54-4ec6-81ea-f07ca47895af"],
+
+Cell["NP/tutorial/Curvature tensors and Einstein's equations", \
+"Categorization",
+ CellLabel->"URI",ExpressionUUID->"bac9854a-85dd-40d9-88fa-5665e1691269"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552,ExpressionUUID->"86331ff1-443c-4007-9bf7-20363db06a18"],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827,ExpressionUUID->"0f37b0fb-f45b-451c-8035-fdbdefcb9429"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771,ExpressionUUID->"23ad83ce-ec96-44ee-8e65-e2e04eeeeffe"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->218895918,ExpressionUUID->"725e5090-54c8-4f02-8885-9a244790d81d"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985,ExpressionUUID->"14c125d6-977f-41b7-a533-048c227d2f1f"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->795871300,ExpressionUUID->"eef40b68-173e-4b85-bf8c-a7c98b7a77cb"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->199739161,ExpressionUUID->"5f304a1a-f66e-4275-ba97-40bf2f3ca4e2"],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->40625308,ExpressionUUID->"d3ddf4e5-b8c6-4509-af67-8f4424406617"],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->357121918,ExpressionUUID->"84f682c1-bf6b-46de-9705-051c4677b5ed"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->35949532,ExpressionUUID->"26d53963-d237-4362-b3a9-b295f41c23b8"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->929432370,ExpressionUUID->"bf46e7c5-c8f8-49df-ba84-9aed90141079"],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365,ExpressionUUID->"5ea4c700-a5e6-447a-a17d-cf5d51871714"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Curvature tensors and Einstein's equations", "Title",
+ CellID->509267359,ExpressionUUID->"8e24c8bb-10bc-4a3c-97b3-b8d7090ed1cf"],
+
+Cell[TextData[{
+ "This part of the ",
+ StyleBox["NP",
+  FontWeight->"Bold"],
+ " package deals with manipulations with tensors in coordinates, so that \
+vectors/covectors are represented by lists and tensors by matrices."
+}], "Text",
+ CellChangeTimes->{{3.7373494922439938`*^9, 3.737349562602624*^9}},
+ CellID->1534169418,ExpressionUUID->"79e82b4a-88cc-4af2-aee2-e61b58890ce4"],
+
+Cell[BoxData[GridBox[{
+   {
+    RowBox[{"NPExtractMetric", "[", 
+     RowBox[{"ds", ",", " ", "xs"}], "]"}], Cell[TextData[{
+     "Converts the line element ",
+     StyleBox["ds",
+      FontSlant->"Italic"],
+     " into a symmetric matrix representing the covariant metric tensor. List \
+of coordinates is provided in ",
+     StyleBox["xs",
+      FontSlant->"Italic"],
+     ". "
+    }], "TableText",ExpressionUUID->"20d813bf-8462-4938-890e-8644af8e6179"]},
+   {"XXXX", Cell[
+    "XXXX", "TableText",ExpressionUUID->
+     "4e922066-b3fc-44c4-b2fc-36a9b2b6e80b"]},
+   {"XXXX", Cell[
+    "XXXX", "TableText",ExpressionUUID->
+     "ab5759c4-0358-4e92-a5ae-d793231ec882"]}
+  }]], "DefinitionBox",
+ CellChangeTimes->{{3.7373493628965387`*^9, 3.737349442405492*^9}},
+ CellID->2096742444,ExpressionUUID->"bd49f172-d1e5-4de5-a945-2fe794c44c38"],
+
+Cell["XXXX.", "Caption",
+ CellID->1891092685,ExpressionUUID->"f7cb7154-c19a-4648-b9c8-3efbc2633439"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["NPExtractMetric[ds, xs] ", "Input"],
+ "allows to extract the matrix of a metric tensor conveniently from the line \
+element. Suppose we want to define covariant metric tensor representing the \
+Schwarzschild solution in Schwarzschild coordinates. The ",
+ StyleBox["line element",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["ds", "Input"],
+ " is written as a quadratic form of differentials of coordinates. The ",
+ StyleBox["list of coordinates",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["xs", "Input"],
+ " tells Mathematica what differentials it should look for in the line \
+element."
+}], "MathCaption",
+ CellChangeTimes->{{3.737349463765142*^9, 3.737349465437256*^9}, {
+  3.737349579673236*^9, 3.737349732173306*^9}, {3.737349791356303*^9, 
+  3.737349872916329*^9}},
+ TextJustification->1.,
+ CellID->836781195,ExpressionUUID->"b3ef26cf-4c3b-4f5c-868a-070cf694861c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ds", " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        FractionBox[
+         RowBox[{"2", "M"}], "r"]}], ")"}], 
+      SuperscriptBox[
+       RowBox[{"Dt", "[", "t", "]"}], "2"]}], "-", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"1", "-", 
+        FractionBox[
+         RowBox[{"2", "M"}], "r"]}]], 
+      SuperscriptBox[
+       RowBox[{"Dt", "[", "r", "]"}], "2"]}], "-", 
+     RowBox[{
+      SuperscriptBox["r", "2"], 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"Dt", "[", "\[Theta]", "]"}], "2"], "+", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"], 
+         SuperscriptBox[
+          RowBox[{"Dt", "[", "\[Phi]", "]"}], "2"]}]}], ")"}]}]}]}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"xs", "  ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", " ", "r", ",", " ", "\[Theta]", ",", " ", "\[Phi]"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"gd", " ", "=", " ", 
+  RowBox[{"NPExtractMetric", "[", 
+   RowBox[{"ds", ",", "xs"}], "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.7373497355002003`*^9, 3.737349788207706*^9}, {
+  3.737349875634974*^9, 3.737349894055439*^9}},
+ CellLabel->"In[16]:=",
+ CellID->2058623809,ExpressionUUID->"c7e90f90-aeff-40dc-a573-2bab8646152c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "-", 
+      FractionBox[
+       RowBox[{"2", " ", "M"}], "r"]}], ",", "0", ",", "0", ",", "0"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{"1", "-", 
+        FractionBox[
+         RowBox[{"2", " ", "M"}], "r"]}]]}], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"-", 
+      SuperscriptBox["r", "2"]}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", 
+     RowBox[{
+      RowBox[{"-", 
+       SuperscriptBox["r", "2"]}], " ", 
+      SuperscriptBox[
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"]}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.737349895861319*^9},
+ CellLabel->"Out[18]=",
+ CellID->1770546904,ExpressionUUID->"5c55ec57-df51-4dbc-a267-d07fcfad1324"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "We follow the convention that the names of covariant tensors carry the \
+postfix ",
+ StyleBox["d",
+  FontWeight->"Bold"],
+ " (down) and covariant tensors carry the postfix ",
+ StyleBox["u",
+  FontWeight->"Bold"],
+ "(up). In this convention, the contravariant metric is simply"
+}], "Text",
+ CellChangeTimes->{{3.73734992373166*^9, 3.737349987712291*^9}},
+ CellID->1886068239,ExpressionUUID->"e86c2520-ab46-4555-9247-3d6774ba53cc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gu", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"Inverse", "[", "gd", "]"}], "//", "Simplify"}]}]], "Input",
+ CellChangeTimes->{{3.73734999495057*^9, 3.737350004402482*^9}},
+ CellLabel->"In[20]:=",
+ CellID->1205057723,ExpressionUUID->"dddc6f0a-3e98-41af-924e-9452dbf4bad7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"1", "-", 
+       FractionBox[
+        RowBox[{"2", " ", "M"}], "r"]}]], ",", "0", ",", "0", ",", "0"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      FractionBox[
+       RowBox[{"2", " ", "M"}], "r"]}], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"-", 
+      FractionBox["1", 
+       SuperscriptBox["r", "2"]]}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", 
+     RowBox[{"-", 
+      FractionBox[
+       SuperscriptBox[
+        RowBox[{"Csc", "[", "\[Theta]", "]"}], "2"], 
+       SuperscriptBox["r", "2"]]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.7373499996159678`*^9, 3.73735000494923*^9}},
+ CellLabel->"Out[20]=",
+ CellID->1281719846,ExpressionUUID->"5132cbc9-6e29-4e3f-9a63-27464302669b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "TutorialMoreAboutSection",
+ CellID->23220180,ExpressionUUID->"63bb6e62-07f5-4a05-8c88-16acd6eb696e"],
+
+Cell["XXXX", "TutorialMoreAbout",
+ CellID->1567025153,ExpressionUUID->"99060092-9142-41be-ac15-457037c4ee00"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Tutorials", "RelatedTutorialsSection",
+ CellID->415694126,ExpressionUUID->"d63667ff-77d3-46ad-90d4-c6ca7bca00e7"],
+
+Cell["XXXX", "RelatedTutorials",
+ CellID->806871991,ExpressionUUID->"2d0fce45-d29a-4642-a6ba-446e98889a19"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Wolfram Education Group Courses", "TutorialRelatedLinksSection",
+ CellID->415694148,ExpressionUUID->"8147f2f6-6248-4a82-b9e3-8bb907c2abf2"],
+
+Cell["XXXX", "TutorialRelatedLinks",
+ CellID->415694149,ExpressionUUID->"173d6e51-c3cf-47ca-8537-d975b9bf01c1"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1920, 1016},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"11.2 for Linux x86 (64-bit) (September 10, 2017)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 600, 14, 29, "History",ExpressionUUID->"570dc24c-8bee-44d0-a19e-eff0871dfc80",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[1183, 38, 123, 1, 36, "CategorizationSection",ExpressionUUID->"1fcb5b4c-ba4c-4ca2-acb0-8824ba7a54eb",
+ CellID->1122911449],
+Cell[1309, 41, 136, 2, 87, "Categorization",ExpressionUUID->"ee37fcf1-3ac2-40a7-8f5a-49dadee02402",
+ CellID->686433507],
+Cell[1448, 45, 130, 2, 87, "Categorization",ExpressionUUID->"d28df8e3-c407-48cc-b077-d15cfdf3ba2d",
+ CellID->605800465],
+Cell[1581, 49, 127, 2, 87, "Categorization",ExpressionUUID->"c4095a62-eb54-4ec6-81ea-f07ca47895af",
+ CellID->468444828],
+Cell[1711, 53, 156, 2, 87, "Categorization",ExpressionUUID->"bac9854a-85dd-40d9-88fa-5665e1691269"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1904, 60, 111, 1, 23, "KeywordsSection",ExpressionUUID->"86331ff1-443c-4007-9bf7-20363db06a18",
+ CellID->1427428552],
+Cell[2018, 63, 100, 1, 87, "Keywords",ExpressionUUID->"0f37b0fb-f45b-451c-8035-fdbdefcb9429",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2155, 69, 108, 1, 23, "DetailsSection",ExpressionUUID->"23ad83ce-ec96-44ee-8e65-e2e04eeeeffe",
+ CellID->307771771],
+Cell[2266, 72, 118, 2, 87, "Details",ExpressionUUID->"725e5090-54c8-4f02-8885-9a244790d81d",
+ CellID->218895918],
+Cell[2387, 76, 124, 2, 87, "Details",ExpressionUUID->"14c125d6-977f-41b7-a533-048c227d2f1f",
+ CellID->350963985],
+Cell[2514, 80, 121, 2, 87, "Details",ExpressionUUID->"eef40b68-173e-4b85-bf8c-a7c98b7a77cb",
+ CellID->795871300],
+Cell[2638, 84, 126, 2, 87, "Details",ExpressionUUID->"5f304a1a-f66e-4275-ba97-40bf2f3ca4e2",
+ CellID->199739161],
+Cell[2767, 88, 115, 2, 87, "Details",ExpressionUUID->"d3ddf4e5-b8c6-4509-af67-8f4424406617",
+ CellID->40625308],
+Cell[2885, 92, 116, 2, 87, "Details",ExpressionUUID->"84f682c1-bf6b-46de-9705-051c4677b5ed",
+ CellID->357121918],
+Cell[3004, 96, 117, 2, 87, "Details",ExpressionUUID->"26d53963-d237-4362-b3a9-b295f41c23b8",
+ CellID->35949532],
+Cell[3124, 100, 133, 2, 87, "Details",ExpressionUUID->"bf46e7c5-c8f8-49df-ba84-9aed90141079",
+ CellID->929432370],
+Cell[3260, 104, 122, 2, 87, "Details",ExpressionUUID->"5ea4c700-a5e6-447a-a17d-cf5d51871714",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[3419, 111, 134, 1, 113, "Title",ExpressionUUID->"8e24c8bb-10bc-4a3c-97b3-b8d7090ed1cf",
+ CellID->509267359],
+Cell[3556, 114, 376, 8, 49, "Text",ExpressionUUID->"79e82b4a-88cc-4af2-aee2-e61b58890ce4",
+ CellID->1534169418],
+Cell[3935, 124, 835, 21, 146, "DefinitionBox",ExpressionUUID->"bd49f172-d1e5-4de5-a945-2fe794c44c38",
+ CellID->2096742444],
+Cell[4773, 147, 100, 1, 36, "Caption",ExpressionUUID->"f7cb7154-c19a-4648-b9c8-3efbc2633439",
+ CellID->1891092685],
+Cell[CellGroupData[{
+Cell[4898, 152, 890, 21, 148, "MathCaption",ExpressionUUID->"b3ef26cf-4c3b-4f5c-868a-070cf694861c",
+ CellID->836781195],
+Cell[CellGroupData[{
+Cell[5813, 177, 1415, 42, 150, "Input",ExpressionUUID->"c7e90f90-aeff-40dc-a573-2bab8646152c",
+ CellID->2058623809],
+Cell[7231, 221, 924, 30, 104, "Output",ExpressionUUID->"5c55ec57-df51-4dbc-a267-d07fcfad1324",
+ CellID->1770546904]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8204, 257, 447, 11, 49, "Text",ExpressionUUID->"e86c2520-ab46-4555-9247-3d6774ba53cc",
+ CellID->1886068239],
+Cell[CellGroupData[{
+Cell[8676, 272, 292, 6, 35, "Input",ExpressionUUID->"dddc6f0a-3e98-41af-924e-9452dbf4bad7",
+ CellID->1205057723],
+Cell[8971, 280, 970, 30, 128, "Output",ExpressionUUID->"5132cbc9-6e29-4e3f-9a63-27464302669b",
+ CellID->1281719846]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9990, 316, 120, 1, 89, "TutorialMoreAboutSection",ExpressionUUID->"63bb6e62-07f5-4a05-8c88-16acd6eb696e",
+ CellID->23220180],
+Cell[10113, 319, 109, 1, 27, "TutorialMoreAbout",ExpressionUUID->"99060092-9142-41be-ac15-457037c4ee00",
+ CellID->1567025153]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10259, 325, 127, 1, 89, "RelatedTutorialsSection",ExpressionUUID->"d63667ff-77d3-46ad-90d4-c6ca7bca00e7",
+ CellID->415694126],
+Cell[10389, 328, 107, 1, 27, "RelatedTutorials",ExpressionUUID->"2d0fce45-d29a-4642-a6ba-446e98889a19",
+ CellID->806871991]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10533, 334, 153, 1, 89, "TutorialRelatedLinksSection",ExpressionUUID->"8147f2f6-6248-4a82-b9e3-8bb907c2abf2",
+ CellID->415694148],
+Cell[10689, 337, 111, 1, 27, "TutorialRelatedLinks",ExpressionUUID->"173d6e51-c3cf-47ca-8537-d975b9bf01c1",
+ CellID->415694149]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

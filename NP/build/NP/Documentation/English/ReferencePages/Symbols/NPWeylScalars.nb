@@ -1,0 +1,169 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5955,        160]
+NotebookOptionsPosition[      3827,        110]
+NotebookOutlinePosition[      5692,        158]
+CellTagsIndexPosition[      5649,        155]
+WindowTitle->NPWeylScalars
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["N P PACKAGE SYMBOL", "PacletNameCell"], Cell[TextData[Cell[BoxData[
+     ActionMenuBox[
+      FrameBox[
+       InterpretationBox[Cell[TextData[{
+         "URL",
+         StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+          StripOnInput->False]
+        }]],
+        TextCell[
+         Row[{"URL", 
+           Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+       StripOnInput->False], {"\<\"NP/ref/NPWeylScalars\"\>":>
+      None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell["NP/ref/NPWeylScalars"]}, Visible -> False]]; 
+       SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+      Delimiter, "\<\"Copy web URL\"\>":>
+      Module[{DocumentationSearch`Private`nb$}, 
+       DocumentationSearch`Private`nb$ = NotebookPut[
+          Notebook[{
+            Cell[
+             BoxData[
+              MakeBoxes[
+               Hyperlink[
+               "http://reference.wolfram.com/language/NP/ref/NPWeylScalars.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+           False]]; SelectionMove[
+        DocumentationSearch`Private`nb$, All, Notebook]; 
+       FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+       NotebookClose[DocumentationSearch`Private`nb$]; 
+       Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+        NotebookLocate[{
+          URL[
+           StringJoin[
+            If[
+             TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$10386], 
+             "http://reference.wolfram.com/system-modeler/", 
+             "http://reference.wolfram.com/language/"], 
+            "NP/ref/NPWeylScalars", ".html"]], None}]}]},
+      Appearance->None,
+      MenuAppearance->Automatic,
+      MenuStyle->"URLMenu"]],
+     LineSpacing->{1.4, 0}]], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["NPWeylScalars", "ObjectName"],
+ Cell[BoxData[
+  TemplateBox[{8},
+   "Spacer1"]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"NPWeylScalars", "[", 
+       RowBox[{
+        TemplateBox[{Cell[
+           TextData["W"]],"paclet:ref/W"},
+         "RefLink",
+         BaseStyle->{"InlineFormula"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["lu", "TI"], ",", 
+          StyleBox["nu", "TI"], ",", 
+          StyleBox["mu", "TI"], ",", 
+          StyleBox["mucc", "TI"]}], "}"}]}], "]"}]], "InlineFormula"],
+     "\[LineSeparator]returns the Weyl scalars, i.e. the components of the \
+Weyl tensor W with respect to the null tetrad."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}}],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"NPWeylScalars",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:NP/guide/NP", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2018, 6, 7, 11, 3, 17.364084}", 
+    "history" -> {"XX", "", "", ""}, "context" -> "NP`", "keywords" -> {}, 
+    "specialkeywords" -> {}, "tutorialcollectionlinks" -> {}, "index" -> True,
+     "label" -> "N P Package Symbol", "language" -> "en", "paclet" -> 
+    "NP Package", "status" -> "None", "summary" -> 
+    "NPWeylScalars[W, {lu, nu, mu, mucc}] returns the Weyl scalars, i.e. the \
+components of the Weyl tensor W with respect to the null tetrad.", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "NPWeylScalars", 
+    "titlemodifier" -> "", "windowtitle" -> "NPWeylScalars", "type" -> 
+    "Symbol", "uri" -> "NP/ref/NPWeylScalars"}},
+CellContext->"Global`",
+FrontEndVersion->"11.2 for Linux x86 (64-bit) (September 10, 2017)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "11.2 for Linux x86 (64-bit) (September 10, 2017)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[585, 21, 2270, 53, 70, "AnchorBarGrid",ExpressionUUID->"dd10cba4-b713-4ec5-b6c2-a739e9fb4247",
+ CellID->1],
+Cell[2858, 76, 170, 6, 70, "ObjectNameGrid",ExpressionUUID->"5d630ee5-9dcc-4787-bdcb-b9ebabbddcd0"],
+Cell[3031, 84, 766, 22, 70, "Usage",ExpressionUUID->"eba41d5c-5bfb-4ede-b45f-d8b861ee0436"],
+Cell[3800, 108, 23, 0, 70, "FooterCell",ExpressionUUID->"0227e3a5-9e42-4374-a537-b92fd5559d1e"]
+}
+]
+*)
+
+(* End of internal cache information *)
